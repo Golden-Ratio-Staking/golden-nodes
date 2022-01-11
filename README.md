@@ -18,8 +18,13 @@ cd
 ### Now, download and install whatever chain you're going to be running
 
 ### Configure variables:
-$BINARY_NAME
-$BINARY_FOLDER
+BINARY_NAME
+BINARY_FOLDER
+```
+export DAEMON_NAME=$BINARY_NAME
+export DAEMON_HOME=$HOME/$BINARY_FOLDER
+source ~/.profile
+```
 
 ### Setup Cosmovisor
 ```
