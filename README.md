@@ -30,5 +30,26 @@ source ~/.profile
 ```
 cd Node-Creation
 bash cosmovisorsetup.sh
-cd
 ```
+
+### Cosmovisor Service Template
+# Configure variables
+[Unit]
+Description=cosmovisor
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=/home/$USER/go/bin/cosmovisor start
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+Environment="DAEMON_NAME=$BINARY_NAME"
+Environment="DAEMON_HOME=/home/$USER/$BINARY_FOLDER"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+Environment="DAEMON_LOG_BUFFER_SIZE=512"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
+[Install]
+WantedBy=multi-user.target
