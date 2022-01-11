@@ -5,11 +5,11 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
 # Install .deb installer
-sudo apt install gdebi
+sudo apt install gdebi -y
 
 # Install Nautilus
 sudo apt-get update
-sudo apt install seahorse-nautilus
+sudo apt install seahorse-nautilus -y
 sudo nautilus -q
 
 # update the local package list and install any available upgrades
