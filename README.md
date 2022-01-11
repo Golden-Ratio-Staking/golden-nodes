@@ -54,3 +54,20 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Start Cosmovisor
+```
+sudo -S systemctl daemon-reload
+sudo -S systemctl enable cosmovisor
+sudo systemctl start cosmovisor
+journalctl -u cosmovisor -f
+```
+
+### Go Variables for new shell use
+```
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+source ~/.profile
+```
