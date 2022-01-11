@@ -39,13 +39,13 @@ Description=cosmovisor
 After=network-online.target
 
 [Service]
-User=$USER
-ExecStart=/home/$USER/go/bin/cosmovisor start
+User=admin
+ExecStart=/home/admin/go/bin/cosmovisor start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
 Environment="DAEMON_NAME=$BINARY_NAME"
-Environment="DAEMON_HOME=/home/$USER/$BINARY_FOLDER"
+Environment="DAEMON_HOME=/home/admin/$BINARY_FOLDER"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
