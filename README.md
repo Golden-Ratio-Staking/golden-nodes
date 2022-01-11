@@ -33,7 +33,7 @@ bash cosmovisorsetup.sh
 ```
 
 ### Cosmovisor Service Template
-# Configure variables
+```
 [Unit]
 Description=cosmovisor
 After=network-online.target
@@ -53,3 +53,4 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 
 [Install]
 WantedBy=multi-user.target
+```
