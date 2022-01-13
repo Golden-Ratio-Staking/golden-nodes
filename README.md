@@ -1,6 +1,9 @@
 # Node-Creation
 ## Quick GUI and Node Creation
 
+### Get .git (If Necessary)
+`sudo apt-get git -y`
+
 ### Install GUI
 ```
 git clone https://github.com/Golden-Ratio-Staking/Node-Creation
