@@ -18,6 +18,15 @@ bash serversetup.sh
 cd
 ```
 
+### Configure Go Path
+```
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+source ~/.profile
+```
+
 ### Now, download and install whatever chain you're going to be running
 
 ### Configure variables:
