@@ -4,6 +4,10 @@
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
+# Install Remote Desktop
+sudo apt install xrdp -y
+sudo systemctl enable xrdp
+
 # Install .deb installer
 sudo apt install gdebi -y
 
