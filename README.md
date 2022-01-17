@@ -7,7 +7,7 @@
 `reboot`
 
 ### Get .git (If Necessary)
-`sudo apt-get git -y`
+`sudo apt-get install git -y`
 
 ### Install GUI
 ```
