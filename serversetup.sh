@@ -25,12 +25,3 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 # Install Golang (Go)
 wget https://golang.org/dl/go1.17.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
-
-# Configure Go path
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export GO111MODULE=on
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-source ~/.profile
-go version
-cd
