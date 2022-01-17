@@ -3,6 +3,7 @@
 
 ### Add User, Remove Root Passwd, Reboot
 `adduser <Pick a Name>`
+`passwd -d root`
 `reboot`
 
 ### Get .git (If Necessary)
