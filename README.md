@@ -1,6 +1,10 @@
 # Node-Creation
 ## Quick GUI and Node Creation
 
+### Add User, Remove Root Passwd, Reboot
+`adduser <Pick a Name>`
+`reboot`
+
 ### Get .git (If Necessary)
 `sudo apt-get git -y`
 
