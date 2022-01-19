@@ -23,7 +23,7 @@ bash serversetup.sh
 cd
 ```
 
-### Configure Go Path
+### Configure Go Path (unless `go version` works)
 ```
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -35,12 +35,10 @@ source ~/.profile
 ### Now, download and install whatever chain you're going to be running
 
 ### Configure variables:
-BINARY_NAME=?
-BINARY_FOLDER=?
+`DAEMON_NAME=<Daemon Name>`
+`DAEMON_HOME=<Daemon Folder>`
+
 ```
-source ~/.profile
-export DAEMON_NAME=$BINARY_NAME
-export DAEMON_HOME=$HOME/$BINARY_FOLDER
 source ~/.profile
 ```
 
@@ -62,8 +60,8 @@ ExecStart=/home/admin/go/bin/cosmovisor start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
-Environment="DAEMON_NAME=$BINARY_NAME"
-Environment="DAEMON_HOME=/home/admin/$BINARY_FOLDER"
+Environment="DAEMON_NAME=<Daemon_Name>"
+Environment="DAEMON_HOME=/home/admin/<daemon_folder>"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
