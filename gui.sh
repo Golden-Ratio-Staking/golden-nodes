@@ -7,4 +7,7 @@ sudo apt install build-essential -y
 sudo apt-get install tasksel -y
 sudo apt-get install lightdm -y
 sudo tasksel
+sudo nano /etc/default/grub
+sudo update-grub
+apt-get update -y && apt-get upgrade -y
 reboot
