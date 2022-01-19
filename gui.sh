@@ -9,5 +9,5 @@ sudo apt-get install lightdm -y
 sudo tasksel
 sudo nano /etc/default/grub
 sudo update-grub
-apt-get update -y && apt-get upgrade -y
+sudo apt-get update -y && apt-get upgrade -y
 reboot
