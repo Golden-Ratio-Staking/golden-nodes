@@ -1,6 +1,9 @@
 # Node-Creation
 ## Quick GUI and Node Creation
 
+### Update
+`sudo apt-get update && sudo apt-get upgrade -y`
+
 ### Add User, Remove Root Passwd, Reboot
 `adduser <Pick a Name>`
 `passwd -d root`
