@@ -1,8 +1,12 @@
 # Node-Creation
 ## Quick GUI and Node Creation
 
-### Update
+### Update and preven the blinking cursor of death on VPS
 `sudo apt-get update && sudo apt-get upgrade -y`
+`sudo nano /etc/default/grub`
+## Change this line
+`GRUB_CMDLINE_LINUX_DEFAULT="nomodeset noresume"`
+`sudo update-grub`
 
 ### Add User, Remove Root Passwd, Reboot
 `adduser <Pick a Name>`
