@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # update the local package list and install any available upgrades
-sudo apt-get update && sudo apt upgrade -y
+sudo apt-get update - && sudo apt upgrade -y
 
 # Install Remote Desktop
 sudo apt install xrdp -y
@@ -21,3 +21,5 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 # Install Golang (Go)
 wget https://golang.org/dl/go1.17.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+
+sudo reboot
