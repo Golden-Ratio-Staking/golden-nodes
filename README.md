@@ -31,7 +31,6 @@ cd
 git clone https://github.com/Golden-Ratio-Staking/Node-Creation
 cd Node-Creation
 bash bareserver.sh
-reboot
 ```
 
 ### Configure Go Path (unless `go version` works)
