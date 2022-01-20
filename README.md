@@ -42,13 +42,14 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 source ~/.profile
 ```
 
-### Now, download and install whatever chain you're going to be running
+## Now, Make install whatever chain you're going to be running
+## init Chain to get config/app.toml configured
+## Download Genesis
 
-### Configure variables:
-`DAEMON_NAME=<Daemon Name>`
-`DAEMON_HOME=<Daemon Folder>`
-
+### Configure/Export to profile and source
 ```
+export DAEMON_NAME=<Daemon Name>
+export DAEMON_HOME=<Daemon Folder>
 source ~/.profile
 ```
 
