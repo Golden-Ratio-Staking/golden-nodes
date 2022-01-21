@@ -4,8 +4,10 @@
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
-# Install Remote Desktop
+# Install Remote Desktop and Interface
+sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils -y
 sudo apt install xrdp -y
+sudo adduser xrdp ssl-cert
 sudo systemctl enable xrdp
 
 # Install .deb installer
