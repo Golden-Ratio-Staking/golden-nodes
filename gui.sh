@@ -6,4 +6,4 @@ sudo systemctl enable xrdp
 sudo apt-get install tasksel -y
 sudo apt-get install lightdm -y
 sudo tasksel
-reboot
+sudo reboot
