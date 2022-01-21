@@ -4,6 +4,7 @@ sudo apt-get update - && sudo apt upgrade -y
 
 # Install Remote Desktop
 sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils -y
+apt install xubuntu-desktop x2goserver x2goserver-xsession -y
 sudo apt install xrdp -y
 sudo adduser xrdp ssl-cert
 sudo systemctl enable xrdp
