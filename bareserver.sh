@@ -4,7 +4,9 @@
 sudo apt-get update - && sudo apt upgrade -y
 
 # Install Remote Desktop
+sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils -y
 sudo apt install xrdp -y
+sudo adduser xrdp ssl-cert
 sudo systemctl enable xrdp
 
 # Install Nautilus
