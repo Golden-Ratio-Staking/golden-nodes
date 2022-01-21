@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # update the local package list and install any available upgrades
 sudo apt-get update - && sudo apt upgrade -y
 
