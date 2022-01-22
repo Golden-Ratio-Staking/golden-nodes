@@ -10,27 +10,19 @@ reboot
 ### Get .git (If Necessary)
 `sudo apt-get install git -y`
 
+### Server Setup
+```
+git clone https://github.com/Golden-Ratio-Staking/Node-Creation
+cd Node-Creation
+bash serversetup.sh
+```
+
 ## GUI ROUTE
 ### Install GUI
 ```
 git clone https://github.com/Golden-Ratio-Staking/Node-Creation
 cd Node-Creation
 bash gui.sh
-```
-
-### Once complete, favorite apps have been configured, and display adjusted:
-```
-cd Node-Creation
-bash serversetup.sh
-cd
-```
-
-## Bare Server Route
-### Install Prerequisites
-```
-git clone https://github.com/Golden-Ratio-Staking/Node-Creation
-cd Node-Creation
-bash bareserver.sh
 ```
 
 ### Configure Go Path (unless `go version` works)
