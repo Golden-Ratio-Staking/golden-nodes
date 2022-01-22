@@ -1,4 +1,6 @@
 #!/bin/sh
+# update the local package list and install any available upgrades
+sudo apt-get update -y && sudo apt upgrade -y
 
 # Install Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -6,6 +8,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 
 # Install Remote Desktop and Interface
 sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils -y
+sudo apt install xubuntu-desktop x2goserver x2goserver-xsession -y
 sudo apt install xrdp -y
 sudo adduser xrdp ssl-cert
 sudo systemctl enable xrdp
@@ -28,3 +31,6 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 # Install Golang (Go)
 wget https://golang.org/dl/go1.17.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+
+# Reboot
+sudo reboot
