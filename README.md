@@ -82,6 +82,25 @@ sudo systemctl start cosmovisor
 journalctl -u cosmovisor -f
 ```
 
+### Service Route
+#### Create a `/etc/systemd/system/<chain-name>.service` file:
+
+```
+[Unit]
+Description=<Binary/Chain>
+After=network-online.target
+
+[Service]
+User=<your-user>
+ExecStart=/home/<your-user>/go/bin/<binary folder> start
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### Go Variables for new shell use
 ```
 export GOROOT=/usr/local/go
