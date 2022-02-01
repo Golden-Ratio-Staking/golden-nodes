@@ -34,6 +34,9 @@ export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 source ~/.profile
 ```
 
+### Get Gex
+`go get -u github.com/cosmos/gex`
+
 ## Now, Make install whatever chain you're going to be running
 ## init Chain to get config/app.toml configured
 ## Download Genesis
