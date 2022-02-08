@@ -5,6 +5,12 @@
 ```
 adduser <Pick a Name>
 passwd -d root
+```
+
+### Change Computer Name for ID purposes
+```
+sudo nano /etc/hostname
+sudo nano /etc/hosts
 reboot
 ```
 ### Get .git (If Necessary)
