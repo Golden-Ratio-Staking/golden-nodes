@@ -13,22 +13,16 @@ sudo nano /etc/hostname
 sudo nano /etc/hosts
 reboot
 ```
+### Login with newly created user
+
 ### Get .git (If Necessary)
 `sudo apt-get install git -y`
 
-### Server Setup
+### Server Setup, will automatically reboot at the end
 ```
 git clone https://github.com/Golden-Ratio-Staking/Node-Creation
 cd Node-Creation
 bash serversetup.sh
-```
-
-## GUI ROUTE
-### Install GUI
-```
-git clone https://github.com/Golden-Ratio-Staking/Node-Creation
-cd Node-Creation
-bash gui.sh
 ```
 
 ### Configure Go Path (unless `go version` works)
@@ -43,8 +37,9 @@ source ~/.profile
 ### Get Gex
 `go get -u github.com/cosmos/gex`
 
-## Now, Make install whatever chain you're going to be running
-## init Chain to get config/app.toml configured
+## Now, go install whatever chain you're going to run or use script to spin up quickly.
+
+## If regularly installing witout script, `init` Chain to get config/app.toml and configure appropriately
 ## Download Genesis
 
 ### Configure/Export to profile and source
