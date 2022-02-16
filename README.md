@@ -16,7 +16,7 @@ reboot
 ### Login with newly created user
 
 ### Get .git (If Necessary)
-`sudo apt-get install git -y`
+`sudo apt install git -y`
 
 ### Server Setup, will automatically reboot at the end
 ```
