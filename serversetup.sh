@@ -32,5 +32,8 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 wget https://golang.org/dl/go1.17.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
 
+# Install htop
+sudo apt install htop
+
 # Reboot
 sudo reboot
