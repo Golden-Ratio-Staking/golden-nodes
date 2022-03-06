@@ -35,5 +35,9 @@ sudo apt install htop
 # Install Tree
 sudo apt install tree
 
+# Snapshot Tooling
+sudo apt install snapd
+sudo snap install lz4
+
 # Reboot
 sudo reboot
