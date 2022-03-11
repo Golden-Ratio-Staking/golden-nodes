@@ -39,5 +39,16 @@ sudo apt install tree
 sudo apt install snapd
 sudo snap install lz4
 
+# Make Swap File
+sudo swapoff -a
+sudo fallocate -l 32G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+# Make it persist
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
 # Reboot
 sudo reboot
