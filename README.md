@@ -83,7 +83,7 @@ WantedBy=multi-user.target
 sudo -S systemctl daemon-reload
 sudo -S systemctl enable cosmovisor
 sudo systemctl start cosmovisor
-journalctl -u cosmovisor -f
+journalctl -u cosmovisor -f -o cat
 ```
 
 ### Service Route
