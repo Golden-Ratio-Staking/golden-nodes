@@ -28,26 +28,28 @@ rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.profile
 source $HOME/.profile
 
-# Install htop
+# Install htop for viewing resources
 sudo apt install htop
 
-# Install Tree
+# Install GEX for viewing chain status in a pretty way
+
+# Install Tree so you can look at what files you have in a pretty way
 sudo apt install tree
 
-# Snapshot Tooling
+# Snapshot Tooling, particularly helpful with Polkachu Snapshots
 sudo apt install snapd
 sudo snap install lz4
 
-# Make Swap File
+# Make 32G Swap File
 sudo swapoff -a
 sudo fallocate -l 32G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 
-# Make it persist
+# Make Swap File persist even after a reboot
 sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
-# Reboot
+# Reboot to clear things up
 sudo reboot
