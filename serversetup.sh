@@ -26,8 +26,14 @@ sudo nautilus -q
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
 
 # Install Golang (Go)
-wget https://golang.org/dl/go1.17.5.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+ver="1.18.1"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.profile
+source $HOME/.profile
 
 # Install htop
 sudo apt install htop
