@@ -1,56 +1,38 @@
 # Node-Creation
-## This guide is a begginer intro to Linux creation and setting up a node for a Tendermint based chain. Many features and security advances can & should be actioned upon, however this is a barebones walkthrough to get setup from scratch. There are scripts and ansible playbooks to set up entire nodes with a few clicks, but if you'd like to learn how to set up manually, this is it. You will see `<something>` throughout this tutorial, these are for you to change yourself for rememberance and uniformity. Change the letters and then remove these symbols `<>`.
+####  This guide is a begginer intro to Linux creation and setting up a node for a Tendermint based chain. Many features and security advances can & should be actioned upon, however this is a barebones walkthrough to get setup from scratch. There are scripts and ansible playbooks to set up entire nodes with a few clicks, but if you'd like to learn how to set up manually, this is it. You will see `<something>` throughout this tutorial, these are for you to change yourself for rememberance and uniformity. Change the letters and then remove these symbols `<>`.
 
-### You will need to start with getting a Server/VPS from OVHcloud, Vultr, Hetzner, Contabo, etc. You can set up a lot from within, including using SSH keys and firewall configurations. However, we're going to pretend you simply just installed a fresh Ubuntu 20.04 HWE LTS and got your Password for `root` emailed to you...so let's change that...
+####  You will need to start with getting a Server/VPS from OVHcloud, Vultr, Hetzner, Contabo, etc. You can set up a lot from within, including using SSH keys and firewall configurations. However, we're going to pretend you simply just installed a fresh Ubuntu 20.04 HWE LTS and got your Password for `root` emailed to you...so let's change that...
 
-### Add your username (then follow prompts to add your new, personal password) and Remove Root Password
+#### Add your username (then follow prompts to add your new, personal password) and Remove Root Password
 ```
 adduser <Pick a Name>
-passwd -d root #Removes password that was emailed to you and lessens chance to get brute force hacked
+passwd -d root 
 ```
 
-### Change Computer Name for ID purposes
+#### Change Computer Name for ID purposes, something like `CoolNewChain-Validator`
 ```
 sudo nano /etc/hostname
 sudo nano /etc/hosts
 reboot
 ```
-### Login with newly created user
+#### Login with newly created user
+#### Update Linux Dependencies and Install Git
+```
+sudo apt update
+sudo apt install git -y
+```
 
-### Get .git (If Necessary)
-`sudo apt install git -y`
-
-### Server Setup, will automatically reboot at the end
+#### Server Setup. This script has a bunch of goodies to make your node run smoothly and nicely with most (like 99.9%) of Tendermint based chains. It is downloading from this repository, so feel free to look at the code/script yourself and pick/choose which pieces to install if you'd like to be picky. Last step of script is to `reboot` like every good install of a bunch of new programs, so don't panic when you see a `disconnected from host!` banner pop up. It will be avaible again in a few minutes.
 ```
 git clone https://github.com/Golden-Ratio-Staking/Node-Creation
 cd Node-Creation
 bash serversetup.sh
 ```
 
-### Configure Go Path (unless `go version` works)
-```
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export GO111MODULE=on
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-source ~/.profile
-```
+# STOP
+#### Go install whatever chain you're going to run, or use script to spin up quickly. If regularly installing witout script, `init` Chain to get `app.toml`, `client.toml`, `config.toml` and configure appropriately. Using JUNO or Osmosis startup guides can be very helpful for practice as they are top notch in explanations.
 
-### Get Gex
-`go get -u github.com/cosmos/gex`
-
-## Now, go install whatever chain you're going to run or use script to spin up quickly.
-
-## If regularly installing witout script, `init` Chain to get config/app.toml and configure appropriately
-## Download Genesis
-
-### Configure/Export to profile and source
-```
-export DAEMON_NAME=<Daemon Name>
-export DAEMON_HOME=<Daemon Folder>
-source ~/.profile
-```
-
+### Optional Extras, if the chain you're setting up left out some detail:
 ### Setup Cosmovisor
 ```
 cd Node-Creation
