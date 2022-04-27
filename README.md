@@ -1,10 +1,12 @@
 # Node-Creation
-## Quick GUI and Node Creation
+## This guide is a begginer intro to Linux creation and setting up a node for a Tendermint based chain. Many features and security advances can & should be actioned upon, however this is a barebones walkthrough to get setup from scratch. There are scripts and ansible playbooks to set up entire nodes with a few clicks, but if you'd like to learn how to set up manually, this is it. You will see `<something>` throughout this tutorial, these are for you to change yourself for rememberance and uniformity. Change the letters and then remove these symbols `<>`.
 
-### Add User, Remove Root Passwd, Reboot
+### You will need to start with getting a Server/VPS from OVHcloud, Vultr, Hetzner, Contabo, etc. You can set up a lot from within, including using SSH keys and firewall configurations. However, we're going to pretend you simply just installed a fresh Ubuntu 20.04 HWE LTS and got your Password for `root` emailed to you...so let's change that...
+
+### Add your username (then follow prompts to add your new, personal password) and Remove Root Password
 ```
 adduser <Pick a Name>
-passwd -d root
+passwd -d root #Removes password that was emailed to you and lessens chance to get brute force hacked
 ```
 
 ### Change Computer Name for ID purposes
