@@ -6,14 +6,6 @@ sudo apt-get update && sudo apt upgrade -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
-# Install Remote Desktop and Interface
-sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils -y
-sudo apt install xubuntu-desktop x2goserver x2goserver-xsession -y
-sudo apt install xrdp -y
-sudo adduser xrdp ssl-cert
-sudo systemctl enable xrdp
-sudo systemctl restart xrdp
-
 # Install .deb installer
 sudo apt install gdebi -y
 
@@ -24,6 +16,7 @@ sudo nautilus -q
 
 # Install toolchain and ensure accurate time synchronization
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
+sudo apt-get install -y make gcc
 
 # Install Golang (Go)
 ver="1.18.1"
