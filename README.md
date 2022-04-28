@@ -25,8 +25,8 @@ sudo apt install git -y
 
 Server Setup. This script has a bunch of goodies to make your node run smoothly and nicely with most (like 99.9%) of Tendermint based chains. It is downloading from this repository, so feel free to look at the code/script yourself and pick/choose which pieces to install if you'd like to be picky. Last step of script is to `reboot` like every good install of a bunch of new programs, so don't panic when you see a `"Disconnected from Host!"` banner pop up. It will be avaible again in a few minutes.
 ```bash
-git clone https://github.com/Golden-Ratio-Staking/Node-Creation
-cd Node-Creation
+git clone https://github.com/Golden-Ratio-Staking/GoldenRatioNodes
+cd GoldenRatioNodes/scripts
 bash serversetup.sh
 ```
 
@@ -54,7 +54,7 @@ source $HOME/.profile
 This script will set you up with latest Cosmovisor, configure folders, and copy your Binary to Genesis folder, the last step of script will place you into the service file for Cosmovisor (so a blank screen until you copy/paste template)
 ```bash
 cd $HOME
-cd Node-Creation
+cd GoldenRatioNodes/scripts
 bash cosmovisorsetup.sh
 ```
 Once script is finished, you should be seeing a blank screen within `nano`, which will be your future service file. Copy/Paste/Edit this service file as needed (pay attention to `<these>`). Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
