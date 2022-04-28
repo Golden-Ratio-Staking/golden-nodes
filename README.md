@@ -15,6 +15,7 @@ sudo nano /etc/hostname
 sudo nano /etc/hosts
 reboot
 ```
+
 #### Login with newly created user
 #### Update Linux Dependencies and Install Git
 ```
@@ -46,14 +47,16 @@ export DAEMON_NAME=<Binary_Name> >> $HOME/.profile
 ```
 source $HOME/.profile
 ```
+
 #### This script will set you up with latest Cosmovisor, configure folders, and copy your Binary to Genesis folder, the last step of script will place you into the service file for Cosmovisor (so a blank screen until you copy/paste template)
 ```
 cd $HOME
 cd Node-Creation
 bash cosmovisorsetup.sh
 ```
-#### You should be seeing a blank screen now. Copy/Paste/Edit this service file as needed (pay attention to `<these>`). Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
-### Cosmovisor Service Template
+#### Once script is finished, you should be seeing a blank screen within `nano`, which will be your future service file. Copy/Paste/Edit this service file as needed (pay attention to `<these>`). Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
+
+#### Cosmovisor Service Template (if you want to edit it in the future simply enter `sudo nano /etc/systemd/system/cosmovisor.service`
 ```
 [Unit]
 Description=cosmovisor
@@ -76,7 +79,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 ```
 
-### Start Cosmovisor
+### Start Cosmovisor. This will refresh service file, enable service file to restart itself upon startup/restart of the server, and start the chain.
 ```
 sudo -S systemctl daemon-reload
 sudo -S systemctl enable cosmovisor
@@ -84,30 +87,26 @@ sudo systemctl start cosmovisor
 journalctl -u cosmovisor -fo cat
 ```
 
-### Service Route
-#### Create a `/etc/systemd/system/<chain-name>.service` file:
+### Service File Route (AKA OG, AKA "I don't like Cosmovisor")
 
+#### Simply ignore the entire cosmovior portion above and create a service file: 
+```
+sudo nano /etc/systemd/system/<chain-name>.service
+```
+
+#### Then copy/paste/edit to your heart's content
 ```
 [Unit]
 Description=<Binary/Chain>
 After=network-online.target
 
 [Service]
-User=<your-user>
-ExecStart=/home/<your-user>/go/bin/<binary folder> start
+User=<username>
+ExecStart=/home/<username>/go/bin/<Binary_Folder> start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
 
 [Install]
 WantedBy=multi-user.target
-```
-
-### Go Variables for new shell use
-```
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export GO111MODULE=on
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-source ~/.profile
 ```
