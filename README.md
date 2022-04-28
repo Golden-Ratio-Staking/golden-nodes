@@ -1,4 +1,4 @@
-# Node-Creation
+## Tendermint Based Chain - Node Creation 101
 ####  This guide is a begginer intro to Linux creation and setting up a node for a Tendermint based chain. Many features and security advances can & should be actioned upon, however this is a barebones walkthrough to get setup from scratch. There are scripts and ansible playbooks to set up entire nodes with a few clicks, but if you'd like to learn how to set up manually, this is it. You will see `<something>` throughout this tutorial, these are for you to change yourself for rememberance and uniformity. Change the letters and then remove these symbols `<>`.
 
 ####  You will need to start with getting a Server/VPS from OVHcloud, Vultr, Hetzner, Contabo, etc. You can set up a lot from within, including using SSH keys and firewall configurations. However, we're going to pretend you simply just installed a fresh Ubuntu 20.04 HWE LTS and got your Password for `root` emailed to you...so let's change that...
@@ -52,7 +52,7 @@ cd $HOME
 cd Node-Creation
 bash cosmovisorsetup.sh
 ```
-#### You should be seeing a blank screen now. Copy/Paste/Edit this service file as needed. Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
+#### You should be seeing a blank screen now. Copy/Paste/Edit this service file as needed (pay attention to `<these>`). Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
 ### Cosmovisor Service Template
 ```
 [Unit]
@@ -60,8 +60,8 @@ Description=cosmovisor
 After=network-online.target
 
 [Service]
-User=admin
-ExecStart=/home/admin/go/bin/cosmovisor start
+User=<username>
+ExecStart=/home/<username>/go/bin/cosmovisor start
 Restart=always
 RestartSec=3
 LimitNOFILE=infinity
@@ -81,7 +81,7 @@ WantedBy=multi-user.target
 sudo -S systemctl daemon-reload
 sudo -S systemctl enable cosmovisor
 sudo systemctl start cosmovisor
-journalctl -u cosmovisor -f -o cat
+journalctl -u cosmovisor -fo cat
 ```
 
 ### Service Route
