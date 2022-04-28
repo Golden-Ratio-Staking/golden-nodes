@@ -32,13 +32,27 @@ bash serversetup.sh
 # STOP
 #### Go install whatever chain you're going to run, or use script to spin up quickly. If regularly installing witout script, `init` Chain to get `app.toml`, `client.toml`, `config.toml` and configure appropriately. Using JUNO or Osmosis startup guides can be very helpful for practice as they are top notch in explanations.
 
-### Optional Extras, if the chain you're setting up left out some detail:
-### Setup Cosmovisor
+
+# Optional Extras, if the chain you're setting up left out some detail:
+
+#### Setup Cosmovisor. This script will get you set up Cosmovisor, which will simplify your life with upgrades going forward:
+#### 1st, Set Variables into your `~/.profile` and `source` it.
 ```
+export DAEMON_HOME=<Binary_Folder> >> $HOME/.profile
+```
+```
+export DAEMON_NAME=<Binary_Name> >> $HOME/.profile
+```
+```
+source $HOME/.profile
+```
+#### This script will set you up with latest Cosmovisor, configure folders, and copy your Binary to Genesis folder, the last step of script will place you into the service file for Cosmovisor (so a blank screen until you copy/paste template)
+```
+cd $HOME
 cd Node-Creation
 bash cosmovisorsetup.sh
 ```
-
+#### You should be seeing a blank screen now. Copy/Paste/Edit this service file as needed. Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
 ### Cosmovisor Service Template
 ```
 [Unit]
@@ -50,9 +64,9 @@ User=admin
 ExecStart=/home/admin/go/bin/cosmovisor start
 Restart=always
 RestartSec=3
-LimitNOFILE=4096
-Environment="DAEMON_NAME=<Daemon_Name>"
-Environment="DAEMON_HOME=/home/admin/<daemon_folder>"
+LimitNOFILE=infinity
+Environment="DAEMON_NAME=<Binary_Name>"
+Environment="DAEMON_HOME=/home/admin/<Binary_Folder>"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
