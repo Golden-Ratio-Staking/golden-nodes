@@ -1,6 +1,6 @@
 #!/bin/sh
 # update the local package list and install any available upgrades
-sudo apt-get update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 # Install Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -10,7 +10,6 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo apt install gdebi -y
 
 # Install Nautilus
-sudo apt-get update
 sudo apt install seahorse-nautilus -y
 sudo nautilus -q
 
