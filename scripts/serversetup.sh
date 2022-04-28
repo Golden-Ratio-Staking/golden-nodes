@@ -31,7 +31,7 @@ source $HOME/.profile
 sudo apt install htop
 
 # Install GEX for viewing chain status in a pretty way
-go get -u github.com/cosmos/gex
+go install github.com/cosmos/gex@latest
 
 # Install Tree so you can look at what files you have in a pretty way
 sudo apt install tree
