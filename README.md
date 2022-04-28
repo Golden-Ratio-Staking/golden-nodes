@@ -23,7 +23,7 @@ sudo apt update
 sudo apt install git -y
 ```
 
-#### Server Setup. This script has a bunch of goodies to make your node run smoothly and nicely with most (like 99.9%) of Tendermint based chains. It is downloading from this repository, so feel free to look at the code/script yourself and pick/choose which pieces to install if you'd like to be picky. Last step of script is to `reboot` like every good install of a bunch of new programs, so don't panic when you see a `"Disconnected from Host!"` banner pop up. It will be avaible again in a few minutes.
+Server Setup. This script has a bunch of goodies to make your node run smoothly and nicely with most (like 99.9%) of Tendermint based chains. It is downloading from this repository, so feel free to look at the code/script yourself and pick/choose which pieces to install if you'd like to be picky. Last step of script is to `reboot` like every good install of a bunch of new programs, so don't panic when you see a `"Disconnected from Host!"` banner pop up. It will be avaible again in a few minutes.
 ```bash
 git clone https://github.com/Golden-Ratio-Staking/Node-Creation
 cd Node-Creation
@@ -31,13 +31,16 @@ bash serversetup.sh
 ```
 
 # STOP
-#### Go install whatever chain you're going to run, or use script to spin up quickly. If regularly installing witout script, `init` Chain to get `app.toml`, `client.toml`, `config.toml` and configure appropriately. Using JUNO or Osmosis startup guides can be very helpful for practice as they are top notch in explanations.
+Go install whatever chain you're going to run, or use script to spin up quickly. If regularly installing witout script, `init` Chain to get `app.toml`, `client.toml`, `config.toml` and configure appropriately. Using JUNO or Osmosis startup guides can be very helpful for practice as they are top notch in explanations.
 
 
 # Optional Extras, if the chain you're setting up left out some detail:
 
-#### Setup Cosmovisor. This script will get you set up Cosmovisor, which will simplify your life with upgrades going forward:
-#### 1st, Set Variables into your `~/.profile` and `source` it.
+### Setup Cosmovisor. 
+
+This script will get you set up Cosmovisor, which will simplify your life with upgrades going forward:
+
+1st, Set Variables into your `~/.profile` and `source` it.
 ```bash
 export DAEMON_HOME=<Binary_Folder> >> $HOME/.profile
 ```
@@ -48,15 +51,15 @@ export DAEMON_NAME=<Binary_Name> >> $HOME/.profile
 source $HOME/.profile
 ```
 
-#### This script will set you up with latest Cosmovisor, configure folders, and copy your Binary to Genesis folder, the last step of script will place you into the service file for Cosmovisor (so a blank screen until you copy/paste template)
+This script will set you up with latest Cosmovisor, configure folders, and copy your Binary to Genesis folder, the last step of script will place you into the service file for Cosmovisor (so a blank screen until you copy/paste template)
 ```bash
 cd $HOME
 cd Node-Creation
 bash cosmovisorsetup.sh
 ```
-#### Once script is finished, you should be seeing a blank screen within `nano`, which will be your future service file. Copy/Paste/Edit this service file as needed (pay attention to `<these>`). Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
+Once script is finished, you should be seeing a blank screen within `nano`, which will be your future service file. Copy/Paste/Edit this service file as needed (pay attention to `<these>`). Then press `Ctrl+X` to escape, `y` to save, and `enter` to confirm.
 
-#### Cosmovisor Service Template (if you want to edit it in the future simply enter `sudo nano /etc/systemd/system/cosmovisor.service`
+Cosmovisor Service Template (if you want to edit it in the future simply enter `sudo nano /etc/systemd/system/cosmovisor.service`
 ```
 [Unit]
 Description=cosmovisor
@@ -79,7 +82,7 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 ```
 
-### Start Cosmovisor. This will refresh service file, enable service file to restart itself upon startup/restart of the server, and start the chain.
+Start Cosmovisor. This will refresh service file, enable service file to restart itself upon startup/restart of the server, and start the chain.
 ```bash
 sudo -S systemctl daemon-reload
 sudo -S systemctl enable cosmovisor
@@ -89,12 +92,12 @@ journalctl -u cosmovisor -fo cat
 
 ### Service File Route (AKA OG, AKA "I don't like Cosmovisor")
 
-#### Simply ignore the entire cosmovior portion above and create a service file: 
+Simply ignore the entire cosmovior portion above and create a service file: 
 ```
 sudo nano /etc/systemd/system/<chain-name>.service
 ```
 
-#### Then copy/paste/edit to your heart's content
+Then copy/paste/edit to your heart's content
 ```
 [Unit]
 Description=<Binary/Chain>
