@@ -42,7 +42,7 @@ sudo snap install lz4
 
 # Make 32G Swap File
 sudo swapoff -a
-sudo fallocate -l 32G /swapfile
+sudo fallocate -l 64G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
