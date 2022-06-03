@@ -18,7 +18,7 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 sudo apt-get install -y make gcc
 
 # Install Golang (Go)
-ver="1.18.1"
+ver="1.18.3"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
