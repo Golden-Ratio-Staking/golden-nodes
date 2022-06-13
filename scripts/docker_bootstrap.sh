@@ -1,4 +1,4 @@
-#!bin/sh
+#!bin/bash
 
 # Remove any currently installed Docker for clean install
 sudo apt-get remove docker docker-engine docker.io containerd runc
