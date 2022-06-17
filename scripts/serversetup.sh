@@ -1,10 +1,13 @@
 #!/bin/sh
+# sudo no password
+echo "admin ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+
 # update the local package list and install any available upgrades
 sudo apt update && sudo apt upgrade -y
 
 # Install Google Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# sudo apt install ./google-chrome-stable_current_amd64.deb
 
 # Install .deb installer
 sudo apt install gdebi -y
