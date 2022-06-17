@@ -54,5 +54,8 @@ sudo swapon /swapfile
 sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
+# Set timezone to UTC becauase you're an adult
+sudo timedatectl set-timezone UTC
+
 # Reboot to clear things up
 sudo reboot
