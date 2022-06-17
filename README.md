@@ -72,7 +72,7 @@ Restart=always
 RestartSec=3
 LimitNOFILE=infinity
 Environment="DAEMON_NAME=<Binary_Name>"
-Environment="DAEMON_HOME=/home/admin/<Binary_Folder>"
+Environment="DAEMON_HOME=/home/<username>/<Binary_Folder>"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
