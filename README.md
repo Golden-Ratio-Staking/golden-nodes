@@ -36,7 +36,7 @@ Go install whatever chain you're going to run, or use script to spin up quickly.
 
 # Optional Extras, if the chain you're setting up left out some detail:
 
-### Run node with Cosmovisor
+## Run node with Cosmovisor
 
 This script will get you set up Cosmovisor, which will simplify your life with upgrades going forward:
 
@@ -90,7 +90,7 @@ sudo systemctl start cosmovisor
 journalctl -u cosmovisor -fo cat
 ```
 
-### Run Node with Service File (AKA OG, AKA "I don't like Cosmovisor")
+## Run Node with Service File (AKA OG, AKA "I don't like Cosmovisor")
 
 Simply ignore the entire cosmovior portion above and create a service file: 
 ```
