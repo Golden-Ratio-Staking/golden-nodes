@@ -11,4 +11,24 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 cp /home/$USER/go/bin/$DAEMON_NAME $DAEMON_HOME/cosmovisor/genesis/bin
 
 # Setup Cosmovisor Service
-sudo nano /etc/systemd/system/cosmovisor.service
+sudo tee /etc/systemd/system/osmosis.service > /dev/null <<EOF
+[Unit]
+Description=$DAEMON_NAME
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$HOME/go/bin/$DAEMON_NAME start
+Restart=always
+RestartSec=3
+LimitNOFILE=infinity
+Environment="DAEMON_NAME=$DAEMON_NAME"
+Environment="DAEMON_HOME=$DAEMON_HOME"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+Environment="DAEMON_LOG_BUFFER_SIZE=512"
+Environment="UNSAFE_SKIP_BACKUP=true"
+
+[Install]
+WantedBy=multi-user.target
+EOF
