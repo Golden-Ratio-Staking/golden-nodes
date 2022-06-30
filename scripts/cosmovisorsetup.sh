@@ -11,28 +11,21 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 cp /home/$USER/go/bin/$DAEMON_NAME $DAEMON_HOME/cosmovisor/genesis/bin
 
 # Setup Cosmovisor Service
-USER=$(echo $USER | tee /dev/null)
-DAEMON_HOME=$(echo $DAEMON_HOME | tee /dev/null)
-DAEMON_NAME=$(echo $DAEMON_NAME | tee /dev/null)
 
-sudo tee /etc/systemd/system/cosmovisor.service > /dev/null <<EOF
-[Unit]
-Description=cosmovisor
-After=network-online.target
-
-[Service]
-User=$USER
-ExecStart=$HOME/go/bin/$DAEMON_NAME start
-Restart=always
-RestartSec=3
-LimitNOFILE=infinity
-Environment="DAEMON_NAME=$DAEMON_NAME"
-Environment="DAEMON_HOME=$DAEMON_HOME"
-Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
-Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-Environment="DAEMON_LOG_BUFFER_SIZE=512"
-Environment="UNSAFE_SKIP_BACKUP=true"
-
-[Install]
-WantedBy=multi-user.target
-EOF
+echo "[Unit]" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Description=cosmovisor" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "After=network-online.target" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "[Service]" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "User=$USER" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "ExecStart=$HOME/go/bin/$DAEMON_NAME start" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Restart=always" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "RestartSec=3" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "LimitNOFILE=infinity" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_NAME=$DAEMON_NAME"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_HOME=$DAEMON_HOME"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_RESTART_AFTER_UPGRADE=true"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_LOG_BUFFER_SIZE=512"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="UNSAFE_SKIP_BACKUP=true"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "[Install]" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "WantedBy=multi-user.target" | sudo tee -a /etc/systemd/system/cosmovisor.service
