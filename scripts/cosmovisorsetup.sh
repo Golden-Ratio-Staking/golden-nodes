@@ -11,6 +11,10 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 cp /home/$USER/go/bin/$DAEMON_NAME $DAEMON_HOME/cosmovisor/genesis/bin
 
 # Setup Cosmovisor Service
+USER=$(echo $USER | tee /dev/null)
+DAEMON_HOME=$(echo $DAEMON_HOME | tee /dev/null)
+DAEMON_NAME=$(echo $DAEMON_NAME | tee /dev/null)
+
 sudo tee /etc/systemd/system/cosmovisor.service > /dev/null <<EOF
 [Unit]
 Description=cosmovisor
