@@ -11,9 +11,9 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 cp /home/$USER/go/bin/$DAEMON_NAME $DAEMON_HOME/cosmovisor/genesis/bin
 
 # Setup Cosmovisor Service
-sudo tee /etc/systemd/system/osmosis.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/cosmovisor.service > /dev/null <<EOF
 [Unit]
-Description=$DAEMON_NAME
+Description=cosmovisor
 After=network-online.target
 
 [Service]
