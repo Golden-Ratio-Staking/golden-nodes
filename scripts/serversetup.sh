@@ -4,8 +4,7 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 # update the local package list and install any available upgrades
 cd $HOME 
-cd GoldenRatioNodes
-cd scripts
+cd GoldenRatioNodes/scripts
 bash update.sh
 
 # Install Google Chrome
