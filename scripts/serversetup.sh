@@ -1,6 +1,6 @@
 #!/bin/sh
 # sudo no password
-echo "admin ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 # update the local package list and install any available upgrades
 sudo apt update && sudo apt upgrade -y
