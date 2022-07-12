@@ -43,8 +43,8 @@ go install github.com/cosmos/gex@latest
 sudo apt install tree
 
 # Snapshot Tooling, particularly helpful with Polkachu Snapshots
-sudo apt install snapd
-sudo snap install lz4
+sudo apt install snapd -y
+sudo snap install lz4 -y
 
 # Make 64G Swap File
 sudo swapoff -a
