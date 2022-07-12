@@ -1,7 +1,5 @@
 #!bin/bash
 
-sudo apt update
-
 # Purge old Linux Kernels
 sudo apt purge -y $(sudo dpkg --list linux-{headers,image,modules}-\* \
 | awk '{ if ($1=="ii") print $2}' \
