@@ -10,11 +10,11 @@ sudo apt update && sudo apt upgrade -y
 # sudo apt install ./google-chrome-stable_current_amd64.deb
 
 # Install .deb installer
-sudo apt install gdebi -y
+# sudo apt install gdebi -y
 
 # Install Nautilus
-sudo apt install seahorse-nautilus -y
-sudo nautilus -q
+# sudo apt install seahorse-nautilus -y
+# sudo nautilus -q
 
 # Install toolchain and ensure accurate time synchronization
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
