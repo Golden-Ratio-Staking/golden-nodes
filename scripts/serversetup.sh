@@ -3,7 +3,10 @@
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 # update the local package list and install any available upgrades
-sudo apt update && sudo apt upgrade -y
+cd $HOME 
+cd GoldenRatioNodes
+cd scripts
+bash update.sh
 
 # Install Google Chrome
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -43,7 +46,7 @@ sudo apt install tree
 sudo apt install snapd
 sudo snap install lz4
 
-# Make 32G Swap File
+# Make 64G Swap File
 sudo swapoff -a
 sudo fallocate -l 64G /swapfile
 sudo chmod 600 /swapfile
