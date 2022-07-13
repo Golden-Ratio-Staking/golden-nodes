@@ -1,3 +1,4 @@
+# WORK IN PROGRESS
 ## Golden Ratio Staking Horcrux Setup
 This script is an advanced and condensed version of the `mirgrating.md` provided by Strangelove-Ventures, please visit https://github.com/strangelove-ventures/horcrux/blob/main/docs/migrating.md for a much more detailed explanation. Without prior knowledge of how Horcrux works, or how configuration need to be, this condensed guide/script may lead you astray and into a world of confusion/problems that will require troubleshooting. I implore you to read the official docs before attmepting this. This script heavily utilizes shell variables that, once set, will make deploying on multiple chains much easier.
 
