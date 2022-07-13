@@ -11,8 +11,9 @@ echo "export HORCRUX_3=X.X.X.X" | sudo tee -a $HOME/.profile
 echo "export HORCRUX_4=X.X.X.X" | sudo tee -a $HOME/.profile
 echo "export HORCRUX_5=X.X.X.X" | sudo tee -a $HOME/.profile
 
-# Peers/Swarm of Sentry/Full Nodes. Please complete with your own information/IPs/custom ports.
-echo "export ATOM_SWARM=tcp://X.X.X.X:16231" | sudo tee -a $HOME/.profile
+# Peers/Swarm of Sentry/Full Nodes. Please complete with your own information/IPs/custom ports. 
+# You can/should list multiple, if you have them, as shown in first example.
+echo "export ATOM_SWARM=tcp://X.X.X.X:16231,tcp://X.X.X.X:16231,tcp://X.X.X.X:16231" | sudo tee -a $HOME/.profile
 echo "export BCNA_SWARM=tcp://X.X.X.X:16182" | sudo tee -a $HOME/.profile
 echo "export CMDX_SWARM=tcp://X.X.X.X:16241" | sudo tee -a $HOME/.profile
 echo "export CRBRUS_SWARM=tcp://X.X.X.X:16234" | sudo tee -a $HOME/.profile
