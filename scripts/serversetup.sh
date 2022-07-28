@@ -45,6 +45,9 @@ sudo apt install tree
 sudo apt install snapd -y
 sudo snap install lz4 -y
 
+# Install grpcurl
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+
 # Make 64G Swap File
 sudo swapoff -a
 sudo fallocate -l 64G /swapfile
