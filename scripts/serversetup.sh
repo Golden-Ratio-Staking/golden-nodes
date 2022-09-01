@@ -6,7 +6,10 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 cd $HOME 
 cd GoldenRatioNodes/scripts
 bash update.sh
+
+# Copy convenience home
 cp update.sh $HOME
+cp ban.sh $HOME
 
 # Install Google Chrome
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -62,6 +65,17 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 # Set timezone to UTC becauase you're an adult
 sudo timedatectl set-timezone UTC
+
+# Setup UFW to allow only SSH and tendermint P2P
+sudo apt install ufw -y
+sudo ufw status
+sudo ufw allow ssh/tcp
+sudo ufw allow 26656
+
+# Setup fail2ban
+cd $HOME
+sudo apt install fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
 # Reboot to clear things up
 sudo reboot
