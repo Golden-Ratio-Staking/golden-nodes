@@ -6,6 +6,7 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 cd $HOME 
 cd GoldenRatioNodes/scripts
 bash update.sh
+cp update.sh $HOME
 
 # Install Google Chrome
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -23,7 +24,7 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 sudo apt-get install -y make gcc
 
 # Install Golang (Go)
-ver="1.18.3"
+ver="1.19"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
