@@ -75,7 +75,8 @@ sudo ufw allow 26656
 # Setup fail2ban
 cd $HOME
 sudo apt install fail2ban -y
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo systemctl enable fail2ban
+sudo systemctl restart fail2ban
 
 # Reboot to clear things up
 sudo reboot
