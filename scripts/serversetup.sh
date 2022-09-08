@@ -47,7 +47,7 @@ sudo apt install tree
 
 # Snapshot Tooling, particularly helpful with Polkachu Snapshots
 sudo apt install snapd -y
-sudo snap install lz4 -y
+sudo snap install lz4
 
 # Install grpcurl
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
