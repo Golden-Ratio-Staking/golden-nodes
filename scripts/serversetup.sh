@@ -4,7 +4,7 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 # update the local package list and install any available upgrades
 cd $HOME 
-cd GoldenRatioNodes/scripts
+cd golden-nodes/scripts
 bash update.sh
 
 # Copy convenience home
