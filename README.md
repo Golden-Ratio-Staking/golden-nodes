@@ -36,8 +36,8 @@ Server Setup. This script has a bunch of goodies to make your node run smoothly 
 
 Notable additional installs: `UFW` (with rules to allow SSH and 26656 for P2P) and `fail2ban`. Your security will be thankful later when you enable these later on. 
 ```bash
-git clone https://github.com/Golden-Ratio-Staking/GoldenRatioNodes
-cd GoldenRatioNodes/scripts
+git clone https://github.com/Golden-Ratio-Staking/golden-nodes
+cd golden-nodes/scripts
 bash serversetup.sh
 ```
 
@@ -66,7 +66,7 @@ source $HOME/.profile
 Note, this should be done *AFTER* installing chain binary. This script will set you up with latest Cosmovisor, configure folders, and copy your Binary to Genesis folder.
 ```bash
 cd $HOME
-cd GoldenRatioNodes/scripts
+cd golden-nodes/scripts
 bash cosmovisorsetup.sh
 ```
 
