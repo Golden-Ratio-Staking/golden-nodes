@@ -10,6 +10,7 @@ bash update.sh
 # Copy convenience home
 cp update.sh $HOME
 cp ban.sh $HOME
+cp restart_cosmovisor.sh $HOME
 
 # Install Google Chrome
 # wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
