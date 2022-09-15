@@ -1,0 +1,9 @@
+server {
+
+        server_name rest-<chain>.examplesite.com;
+
+        location / {
+                proxy_pass http://rest-<chain>.examplesite.com:<rest port>/;
+        server_name_in_redirect off;
+        proxy_set_header Host $host;
+        }
