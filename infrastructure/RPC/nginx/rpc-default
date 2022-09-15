@@ -3,7 +3,7 @@ server {
         server_name rpc-<chain>.goldenratiostaking.net;
 
         location / {
-                proxy_pass http://rpc-evmos.goldenratiostaking.net:<RPC>/;
+                proxy_pass http://rpc-<chain>.goldenratiostaking.net:<RPC Port>/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
         }
