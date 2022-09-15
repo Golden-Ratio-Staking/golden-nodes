@@ -7,3 +7,4 @@ server {
         server_name_in_redirect off;
         proxy_set_header Host $host;
         }
+}
