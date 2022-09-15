@@ -1,9 +1,9 @@
 server {
 
-        server_name rpc-<chain>.goldenratiostaking.net;
+        server_name rpc-<chain>.examplesite.com;
 
         location / {
-                proxy_pass http://rpc-<chain>.goldenratiostaking.net:<RPC Port>/;
+                proxy_pass http://rpc-<chain>.examplesite.com:<RPC Port>/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
         }
