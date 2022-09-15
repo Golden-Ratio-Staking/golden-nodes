@@ -26,7 +26,7 @@ sudo rm /etc/nginx/sites-enabled/default
 cd golden-nodes/infrastructure/templates/nginx
 
 # RPC
-cp RPC-default /etc/nginx/sites-enabled
+sudo cp RPC-default /etc/nginx/sites-enabled
 ```
 
 Edit configuration file by changing these variables `<example>`, please remove these symbols as well `<>`.
@@ -54,5 +54,5 @@ Select yes (2). This will change the config slightly to forward traffic and to u
 # Auto Renewal
 SSL certificates expire, luckily you certbot can auto renew, give it a test.
 ```
-certbot renew --dry-run
+sudo certbot renew --dry-run
 ```
