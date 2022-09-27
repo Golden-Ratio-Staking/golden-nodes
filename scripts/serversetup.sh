@@ -50,6 +50,9 @@ sudo apt install tree
 sudo apt install snapd -y
 sudo snap install lz4
 
+# Install Net-Tools
+sudo apt install net-tools
+
 # Install grpcurl
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
