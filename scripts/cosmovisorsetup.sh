@@ -18,7 +18,7 @@ echo "Description=cosmovisor" | sudo tee -a /etc/systemd/system/cosmovisor.servi
 echo "After=network-online.target" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "[Service]" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "User=$USER" | sudo tee -a /etc/systemd/system/cosmovisor.service
-echo "ExecStart=$HOME/go/bin/$DAEMON_NAME start" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "ExecStart=$HOME/go/bin/cosmovisor start" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "Restart=always" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "RestartSec=8" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "LimitNOFILE=infinity" | sudo tee -a /etc/systemd/system/cosmovisor.service
