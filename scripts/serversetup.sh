@@ -28,7 +28,7 @@ sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make
 sudo apt-get install -y make gcc
 
 # Install Golang (Go)
-ver="1.19.1"
+ver="1.19.2"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -52,6 +52,9 @@ sudo snap install lz4
 
 # Install Net-Tools
 sudo apt install net-tools
+
+# Install Speedtest
+sudo apt install speedtest-cli -y
 
 # Install grpcurl
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
@@ -81,6 +84,11 @@ cd $HOME
 sudo apt install fail2ban -y
 sudo systemctl enable fail2ban
 sudo systemctl restart fail2ban
+
+# Remove Unattended-Upgrades
+sudo systemctl stop unattended-upgrades
+sudo systemctl disable unattended-upgrades
+sudo apt purge unattended-upgrades -y
 
 # Reboot to clear things up
 sudo reboot
