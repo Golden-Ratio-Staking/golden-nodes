@@ -10,7 +10,7 @@ In this guide, we will turn a synced chain node into an RPC and/or REST (API) en
 Install Nginx.
 ```
 sudo apt update
-sudo apt install nginx
+sudo apt install nginx -y
 ```
 
 Assuming you're using UFW, you'll want to open up port 80 for certbot, and 443 for encrypted communication. This command will change your UFW automatically.
