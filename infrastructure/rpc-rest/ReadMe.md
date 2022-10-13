@@ -40,7 +40,7 @@ sudo nano /etc/nginx/sites-enabled/RPC-default
 ## SSL Encryption for `https`
 Install `certbot` and configure so that you can securely use `https` and forward all traffic there as well.
 ```
-sudo apt install certbot python3-certbot-nginx
+sudo apt install certbot python3-certbot-nginx -y
 ```
 
 Get certificates. Replace `<>` with domain name.
