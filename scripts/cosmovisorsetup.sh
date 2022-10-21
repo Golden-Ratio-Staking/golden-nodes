@@ -1,14 +1,16 @@
 #!/bin/sh
-# Get Cosmovisor, then upgrade it immediately to latest verison...you wont even notice
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.1.0
+# Get Cosmovisor
+go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@latest
+
+# Set up folders and place binary in genesis bin
+cosmovisor init $DAEMON_NAME
 
 # Setup folders
-mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades
+# mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
+# mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 
 # Place Binary in Folder
-cp /home/$USER/go/bin/$DAEMON_NAME $DAEMON_HOME/cosmovisor/genesis/bin
+# cp /home/$USER/go/bin/$DAEMON_NAME $DAEMON_HOME/cosmovisor/genesis/bin
 
 # Setup Cosmovisor Service
 # There's a better way to do this, but this works just fine...
@@ -18,7 +20,7 @@ echo "Description=cosmovisor" | sudo tee -a /etc/systemd/system/cosmovisor.servi
 echo "After=network-online.target" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "[Service]" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "User=$USER" | sudo tee -a /etc/systemd/system/cosmovisor.service
-echo "ExecStart=$HOME/go/bin/cosmovisor start" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "ExecStart=$HOME/go/bin/cosmovisor run start" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "Restart=always" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "RestartSec=8" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "LimitNOFILE=infinity" | sudo tee -a /etc/systemd/system/cosmovisor.service
