@@ -3,7 +3,7 @@
 go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@latest
 
 # Set up folders and place binary in genesis bin
-cosmovisor init $DAEMON_NAME
+cosmovisor init $HOME/go/bin/$DAEMON_NAME
 
 # Setup folders
 # mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
