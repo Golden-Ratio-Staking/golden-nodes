@@ -11,17 +11,7 @@ bash update.sh
 cp update.sh $HOME
 cp ban.sh $HOME
 cp restart_cosmovisor.sh $HOME
-
-# Install Google Chrome
-# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-# sudo apt install ./google-chrome-stable_current_amd64.deb
-
-# Install .deb installer
-# sudo apt install gdebi -y
-
-# Install Nautilus
-# sudo apt install seahorse-nautilus -y
-# sudo nautilus -q
+cp consensus.sh $HOME
 
 # Install toolchain and ensure accurate time synchronization
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
@@ -89,6 +79,13 @@ sudo systemctl restart fail2ban
 sudo systemctl stop unattended-upgrades
 sudo systemctl disable unattended-upgrades
 sudo apt purge unattended-upgrades -y
+
+# Get Consensus Watcher
+cd $HOME
+git clone https://github.com/joeabbey/pvtop
+cd pvtop
+git checkout show-commits-too
+go install
 
 # Reboot to clear things up
 sudo reboot
