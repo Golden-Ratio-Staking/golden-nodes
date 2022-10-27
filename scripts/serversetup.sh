@@ -28,7 +28,7 @@ echo "***done***"
 # Install toolchain and ensure accurate time synchronization
 echo " "
 sleep 1
-echo "***Installing toolchain for to smoothly run nodes...***"
+echo "***Installing toolchain to smoothly run nodes...***"
 echo " "
 sleep 3
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
