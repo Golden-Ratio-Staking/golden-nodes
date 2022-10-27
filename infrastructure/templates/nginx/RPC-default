@@ -2,10 +2,10 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
-        server_name rpc-<chain>.examplesite.com;
+        server_name rpc-<chain>.goldenratiostaking.net;
 
         location / {
-                proxy_pass http://rpc-<chain>.examplesite.com:<rpc port>/;
+                proxy_pass http://rpc-<chain>.goldenratiostaking.net:26657/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
         }
