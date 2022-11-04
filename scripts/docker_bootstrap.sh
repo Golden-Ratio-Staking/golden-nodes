@@ -26,5 +26,8 @@ echo \
  sudo apt-get update
  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
  
+# Get Docker-Compose
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+ 
 # Test hello-world
 sudo docker run hello-world
