@@ -119,11 +119,11 @@ echo "***done***"
 # Make 64G Swap File
 echo " "
 sleep 1
-echo "***Creating 64GB swap file...***"
+echo "***Creating 32GB swap file...***"
 echo " "
 sleep 2
 sudo swapoff -a
-sudo fallocate -l 64G /swapfile
+sudo fallocate -l 32G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
