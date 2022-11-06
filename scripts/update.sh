@@ -1,5 +1,8 @@
 #!bin/bash
 
+# Remove the bloat
+sudo apt autoremove -y
+
 # Purge old Linux Kernels
 sudo apt purge -y $(sudo dpkg --list linux-{headers,image,modules}-\* \
 | awk '{ if ($1=="ii") print $2}' \
@@ -8,9 +11,6 @@ sudo apt purge -y $(sudo dpkg --list linux-{headers,image,modules}-\* \
 
 # Fix the complaining installs that couldn't finish
 sudo apt --fix-broken install
-
-# Remove the bloat
-sudo apt autoremove -y
 
 # Update grub
 sudo update-grub
