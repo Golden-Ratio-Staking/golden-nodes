@@ -116,14 +116,14 @@ sleep 2
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 echo "***done***"
 
-# Make 64G Swap File
+# Make 16G Swap File
 echo " "
 sleep 1
-echo "***Creating 32GB swap file...***"
+echo "***Creating 16GB swap file...***"
 echo " "
 sleep 2
 sudo swapoff -a
-sudo fallocate -l 32G /swapfile
+sudo fallocate -l 16G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
