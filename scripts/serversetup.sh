@@ -36,7 +36,7 @@ sudo apt-get install -y make gcc
 echo "***done***"
 
 # Install Golang (Go)
-ver="1.19.4"
+ver="1.20.1"
 echo " "
 sleep 1
 echo "***Installing Go "$VER"...***"
