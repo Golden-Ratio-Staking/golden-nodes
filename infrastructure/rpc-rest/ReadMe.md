@@ -24,16 +24,12 @@ Create Reverse Proxy using Nginx
 cd $HOME
 sudo rm /etc/nginx/sites-enabled/default
 cd golden-nodes/infrastructure/templates/nginx
-
-# RPC
 sudo cp RPC-default /etc/nginx/sites-enabled
 ```
 
 Edit configuration file by changing these variables `<example>`, please remove these symbols as well `<>`.
 ```
 cd $HOME
-
-# Edit RPC
 sudo nano /etc/nginx/sites-enabled/RPC-default
 ```
 
