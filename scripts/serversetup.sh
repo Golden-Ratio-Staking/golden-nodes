@@ -23,6 +23,7 @@ cp editvalidator.sh $HOME
 cp gov.sh $HOME
 cp restart_cosmovisor.sh $HOME
 cp update.sh $HOME
+cp update_go.sh $HOME
 echo "***done***"
 
 # Install toolchain and ensure accurate time synchronization
@@ -36,10 +37,10 @@ sudo apt-get install -y make gcc
 echo "***done***"
 
 # Install Golang (Go)
-ver="1.20.1"
+ver="1.20.2"
 echo " "
 sleep 1
-echo "***Installing Go "$VER"...***"
+echo "***Installing Go "$ver"...***"
 echo " "
 sleep 2
 
@@ -116,14 +117,14 @@ sleep 2
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 echo "***done***"
 
-# Make 16G Swap File
+# Make 8G Swap File
 echo " "
 sleep 1
-echo "***Creating 16GB swap file...***"
+echo "***Creating 8GB swap file...***"
 echo " "
 sleep 2
 sudo swapoff -a
-sudo fallocate -l 16G /swapfile
+sudo fallocate -l 8G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
