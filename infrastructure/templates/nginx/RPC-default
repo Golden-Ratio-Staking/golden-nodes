@@ -8,6 +8,8 @@ server {
                 proxy_pass http://<ip>:26657/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
         }
 }        
 server {
@@ -20,5 +22,7 @@ server {
                 proxy_pass http://<ip>:1317/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
         }
 }
