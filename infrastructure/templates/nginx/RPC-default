@@ -5,7 +5,7 @@ server {
         server_name rpc-<chain>.goldenratiostaking.net;
 
         location / {
-                proxy_pass http://<ip>:26657/;
+                proxy_pass http://localhost:26657/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
         proxy_set_header Upgrade $http_upgrade;
@@ -19,7 +19,7 @@ server {
         server_name rest-<chain>.goldenratiostaking.net;
 
         location / {
-                proxy_pass http://<ip>:1317/;
+                proxy_pass http://localhost:1317/;
         server_name_in_redirect off;
         proxy_set_header Host $host;
         proxy_set_header Upgrade $http_upgrade;
