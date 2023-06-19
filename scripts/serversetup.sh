@@ -19,6 +19,7 @@ echo " "
 sleep 1
 cp ban.sh $HOME
 cp consensus.sh $HOME
+cp cosmovisorsetup.sh $HOME
 cp editvalidator.sh $HOME
 cp gov.sh $HOME
 cp restart_cosmovisor.sh $HOME
@@ -37,7 +38,7 @@ sudo apt-get install -y make gcc
 echo "***done***"
 
 # Install Golang (Go)
-ver="1.20.2"
+ver="1.20.5"
 echo " "
 sleep 1
 echo "***Installing Go "$ver"...***"
@@ -187,10 +188,9 @@ echo "***Installing consensus watcher. ty Blockpane <3***"
 echo " "
 sleep 2
 cd $HOME
-git clone https://github.com/joeabbey/pvtop
+git clone https://github.com/blockpane/pvtop
 cd pvtop
-git checkout show-commits-too
-go install
+go install ./...
 echo "***done***"
 
 # Reboot to clear things up
