@@ -35,6 +35,7 @@ echo " "
 sleep 3
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
 sudo apt-get install -y make gcc
+sudo apt install pip -y
 echo "***done***"
 
 # Install Golang (Go)
