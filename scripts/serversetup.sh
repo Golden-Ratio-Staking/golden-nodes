@@ -36,10 +36,11 @@ sleep 3
 sudo apt install curl tar wget pkg-config libssl-dev jq build-essential git make ncdu -y
 sudo apt-get install -y make gcc
 sudo apt install pip -y
+sudo apt install btop -y
 echo "***done***"
 
 # Install Golang (Go)
-ver="1.20.5"
+ver="1.20.6"
 echo " "
 sleep 1
 echo "***Installing Go "$ver"...***"
