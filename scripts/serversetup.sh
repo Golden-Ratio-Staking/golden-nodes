@@ -23,6 +23,7 @@ cp cosmovisorsetup.sh $HOME
 cp editvalidator.sh $HOME
 cp gov.sh $HOME
 cp restart_cosmovisor.sh $HOME
+cp snapshot.sh $HOME
 cp update.sh $HOME
 cp update_go.sh $HOME
 echo "***done***"
@@ -91,6 +92,7 @@ echo " "
 sleep 2
 sudo apt install snapd -y
 sudo snap install lz4
+sudo snap install aria2c
 echo "***done***"
 
 # Install Net-Tools
