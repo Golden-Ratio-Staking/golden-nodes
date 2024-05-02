@@ -23,7 +23,7 @@ cp cosmovisorsetup.sh $HOME
 cp editvalidator.sh $HOME
 cp gov.sh $HOME
 cp restart_cosmovisor.sh $HOME
-cp snapshot.sh $HOME
+cp resync.sh $HOME
 cp update.sh $HOME
 cp update_go.sh $HOME
 echo "***done***"
