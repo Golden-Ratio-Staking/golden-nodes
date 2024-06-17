@@ -29,6 +29,8 @@ echo "Environment="DAEMON_HOME=$DAEMON_HOME"" | sudo tee -a /etc/systemd/system/
 echo "Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "Environment="DAEMON_RESTART_AFTER_UPGRADE=true"" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "Environment="DAEMON_LOG_BUFFER_SIZE=512"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_SHUTDOWN_GRACE=10s"" | sudo tee -a /etc/systemd/system/cosmovisor.service
+echo "Environment="DAEMON_RESTART_DELAY=10s"" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "Environment="UNSAFE_SKIP_BACKUP=true"" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "[Install]" | sudo tee -a /etc/systemd/system/cosmovisor.service
 echo "WantedBy=multi-user.target" | sudo tee -a /etc/systemd/system/cosmovisor.service
