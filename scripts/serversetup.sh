@@ -122,6 +122,10 @@ sleep 2
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 echo "***done***"
 
+# Nvme Things
+sudo apt install smartmontools
+sudo apt install nvme-cli
+
 # Make 8G Swap File
 echo " "
 sleep 1
