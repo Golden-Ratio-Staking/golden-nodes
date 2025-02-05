@@ -41,7 +41,7 @@ sudo apt install btop -y
 echo "***done***"
 
 # Install Golang (Go)
-ver="1.20.6"
+ver="1.23.6"
 echo " "
 sleep 1
 echo "***Installing Go "$ver"...***"
